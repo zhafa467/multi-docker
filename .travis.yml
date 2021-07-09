@@ -14,7 +14,7 @@ after_success:
   - docker build -t zhafa467/multi-server ./server
   - docker build -t zhafa467/multi-worker ./worker
   # Log in to Docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-sdtin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take images to push to Docker hub
   - docker push zhafa467/multi-client
   - docker push zhafa467/multi-nginx
