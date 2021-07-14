@@ -20,3 +20,13 @@ after_success:
   - docker push zhafa467/multi-nginx
   - docker push zhafa467/multi-server
   - docker push zhafa467/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: southeast-2
+  app: Multi-docker
+  env: Multidocker-env
+  bucket_name: elasticbeanstalk-ap-southeast-2-476290624158
+  bucket_path: docker-multi
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
